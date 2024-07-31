@@ -1,0 +1,12 @@
+{
+    "name": "TCC_Monitoramento",
+    "description": "This project is a final project focused on the cloud monitoring of a variable of interest through a low-cost architecture",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}
