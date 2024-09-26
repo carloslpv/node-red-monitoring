@@ -1,1 +1,924 @@
-[]
+[
+    {
+        "id": "51eb4d51b7851625",
+        "type": "tab",
+        "label": "DB_Create",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8d79c63af2905785",
+        "type": "tab",
+        "label": "DB_Connection",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a1fade4a190a0e04",
+        "type": "tab",
+        "label": "OPCUA_Codesys",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1efa3ab44b591371",
+        "type": "tab",
+        "label": "Integration_RS232",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "858453483ebdf10a",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2236dfd1.c909e",
+        "type": "MySQLdatabase",
+        "name": "INTEGRATION",
+        "host": "192.168.1.240",
+        "port": "3306",
+        "db": "INTEGRATION",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "6d23db44.1697d4",
+        "type": "ui_tab",
+        "name": "Main Tab",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "eed4bf37.31aee",
+        "type": "ui_group",
+        "name": "[ Access Data of Class Room ]",
+        "tab": "6d23db44.1697d4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "75e28102e72f9a1d",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "cc1c2a0d002b9c24",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.1.245",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "2",
+        "cycletime": "1000",
+        "timeout": "20000",
+        "name": "",
+        "vartable": [
+            {
+                "addr": "DB1,REAL0",
+                "name": "saida"
+            }
+        ]
+    },
+    {
+        "id": "cbd6036efb84d4b1",
+        "type": "ui_tab",
+        "name": "dataSensor",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b94156fa0e0831f7",
+        "type": "ui_group",
+        "name": "dataSensor",
+        "tab": "cbd6036efb84d4b1",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2ca8b98fed85ae9c",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.1.240:4840",
+        "secpol": "Basic256Sha256",
+        "secmode": "SignAndEncrypt",
+        "none": false,
+        "login": true,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "cbb96a89980a268b",
+        "type": "serial-port",
+        "name": "LoRaBee",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "63b82e9f207797d6",
+        "type": "MySQLdatabase",
+        "name": "SYS",
+        "host": "localhost",
+        "port": "3306",
+        "db": "sys",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "f1a8a57d.896448",
+        "type": "inject",
+        "z": "51eb4d51b7851625",
+        "name": "CREATE",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 140,
+        "wires": [
+            [
+                "16d49f4f.2f72e1"
+            ]
+        ]
+    },
+    {
+        "id": "d8886e88.2e352",
+        "type": "debug",
+        "z": "51eb4d51b7851625",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "284382e1.7b6bde",
+        "type": "comment",
+        "z": "51eb4d51b7851625",
+        "name": "createDatabase",
+        "info": "",
+        "x": 140,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "16d49f4f.2f72e1",
+        "type": "function",
+        "z": "51eb4d51b7851625",
+        "name": "TABLE",
+        "func": "var query = \"CREATE TABLE INTEGRATION_QUEUE ( \" +\n            \"ID INT AUTO_INCREMENT NOT NULL PRIMARY KEY, \" +\n            \"DESCRIPTION VARCHAR(255) NOT NULL, \" +\n            \"VALUE DOUBLE NOT NULL, \" +\n            \"STATUS CHAR(1) NOT NULL, \" +\n            \"CREATION_DATE DATETIME NOT NULL, \" +\n            \"INTEGRATION_DATE DATETIME NULL);\";\n            \nvar msg = {\n    topic: query\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 140,
+        "wires": [
+            [
+                "392b8ab7.e19ac6"
+            ]
+        ]
+    },
+    {
+        "id": "392b8ab7.e19ac6",
+        "type": "mysql",
+        "z": "51eb4d51b7851625",
+        "mydb": "2236dfd1.c909e",
+        "name": "",
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "d8886e88.2e352"
+            ]
+        ]
+    },
+    {
+        "id": "982a5d4d.e294f",
+        "type": "inject",
+        "z": "51eb4d51b7851625",
+        "name": "CREATE",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "3648a443.b264bc"
+            ]
+        ]
+    },
+    {
+        "id": "8f16a404.412c08",
+        "type": "debug",
+        "z": "51eb4d51b7851625",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 650,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3648a443.b264bc",
+        "type": "function",
+        "z": "51eb4d51b7851625",
+        "name": "DATABASE",
+        "func": "var query = \"CREATE DATABASE INTEGRATION;\";\n            \nvar msg = {\n    topic: query\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 80,
+        "wires": [
+            [
+                "1c79da55.f69436"
+            ]
+        ]
+    },
+    {
+        "id": "1c79da55.f69436",
+        "type": "mysql",
+        "z": "51eb4d51b7851625",
+        "mydb": "63b82e9f207797d6",
+        "name": "",
+        "x": 490,
+        "y": 80,
+        "wires": [
+            [
+                "8f16a404.412c08"
+            ]
+        ]
+    },
+    {
+        "id": "e5cfe75f9934af14",
+        "type": "function",
+        "z": "8d79c63af2905785",
+        "name": "INSERT_READ_VALUES",
+        "func": "var dataSensor = msg.payload;\n\nvar query = \"INSERT INTO INTEGRATION_QUEUE (DESCRIPTION,VALUE,STATUS,CREATION_DATE,INTEGRATION_DATE) VALUES (\" +\n            \"'Teste CODESYS', \" +\n            dataSensor + \", \" +\n            \"'P', \" +\n            \"NOW(), \" +\n            \"NULL);\";\n\nmsg.topic = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 80,
+        "wires": [
+            [
+                "a4b16b8afdb47881"
+            ]
+        ]
+    },
+    {
+        "id": "a4b16b8afdb47881",
+        "type": "mysql",
+        "z": "8d79c63af2905785",
+        "mydb": "2236dfd1.c909e",
+        "name": "",
+        "x": 580,
+        "y": 80,
+        "wires": [
+            [
+                "d8c772a15a5ec736"
+            ]
+        ]
+    },
+    {
+        "id": "d8c772a15a5ec736",
+        "type": "debug",
+        "z": "8d79c63af2905785",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1cc6d5dfbb127cec",
+        "type": "s7 in",
+        "z": "8d79c63af2905785",
+        "endpoint": "cc1c2a0d002b9c24",
+        "mode": "single",
+        "variable": "saida",
+        "diff": false,
+        "name": "",
+        "x": 90,
+        "y": 80,
+        "wires": [
+            [
+                "e5cfe75f9934af14"
+            ]
+        ]
+    },
+    {
+        "id": "3d3db781dc515b66",
+        "type": "comment",
+        "z": "8d79c63af2905785",
+        "name": "getAndInsertSensorData",
+        "info": "",
+        "x": 150,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "92ceddf2df36ff46",
+        "type": "OpcUa-Client",
+        "z": "a1fade4a190a0e04",
+        "endpoint": "2ca8b98fed85ae9c",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "OPCUA_READ",
+        "x": 460,
+        "y": 140,
+        "wires": [
+            [
+                "4fb9f44980b20185"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "940793d3eefb25f1",
+        "type": "OpcUa-Item",
+        "z": "a1fade4a190a0e04",
+        "item": "ns=4;s=|var|CODESYS Control for Raspberry Pi 64 SL.Application.PLC_PRG.output",
+        "datatype": "DateTime",
+        "value": "",
+        "name": "descricao",
+        "x": 240,
+        "y": 140,
+        "wires": [
+            [
+                "92ceddf2df36ff46"
+            ]
+        ]
+    },
+    {
+        "id": "d766c54612124775",
+        "type": "inject",
+        "z": "a1fade4a190a0e04",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4fb9f44980b20185",
+        "type": "function",
+        "z": "a1fade4a190a0e04",
+        "name": "INSERT_READ_VALUES",
+        "func": "var dataSensor = msg.payload;\n\nvar query = \"INSERT INTO INTEGRATION_QUEUE (DESCRIPTION,VALUE,STATUS,CREATION_DATE,INTEGRATION_DATE) VALUES (\" +\n            \"'Teste CODESYS', \" +\n            dataSensor + \", \" +\n            \"'P', \" +\n            \"NOW(), \" +\n            \"NULL);\";\n\nmsg.topic = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "2db59ddd7c88c2f3"
+            ]
+        ]
+    },
+    {
+        "id": "2db59ddd7c88c2f3",
+        "type": "mysql",
+        "z": "a1fade4a190a0e04",
+        "mydb": "2236dfd1.c909e",
+        "name": "",
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "67ee80a97daa46ba"
+            ]
+        ]
+    },
+    {
+        "id": "67ee80a97daa46ba",
+        "type": "debug",
+        "z": "a1fade4a190a0e04",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b96bf2a17e0b584c",
+        "type": "comment",
+        "z": "a1fade4a190a0e04",
+        "name": "writeCodesysValuesInDB",
+        "info": "",
+        "x": 130,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "4b4b9a6e8489852c",
+        "type": "cronplus",
+        "z": "1efa3ab44b591371",
+        "name": "SEND_DATA_RS232",
+        "outputField": "payload",
+        "timeZone": "",
+        "storeName": "",
+        "commandResponseMsgOutput": "output1",
+        "defaultLocation": "-27.173354029738917 -51.506803035736084",
+        "defaultLocationType": "fixed",
+        "outputs": 1,
+        "options": [
+            {
+                "name": "schedule1",
+                "topic": "topic1",
+                "payloadType": "default",
+                "payload": "",
+                "expressionType": "cron",
+                "expression": "*/3 * * * * *",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            }
+        ],
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "5c597b89feb440f4"
+            ]
+        ]
+    },
+    {
+        "id": "3676d32c388682c3",
+        "type": "mysql",
+        "z": "1efa3ab44b591371",
+        "mydb": "2236dfd1.c909e",
+        "name": "",
+        "x": 620,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f510884eb8e082f8",
+        "type": "comment",
+        "z": "1efa3ab44b591371",
+        "name": "sendDbValuesToLoRa",
+        "info": "",
+        "x": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "4f57d1497276e747",
+        "type": "serial out",
+        "z": "1efa3ab44b591371",
+        "name": "SendAvgValues",
+        "serial": "cbb96a89980a268b",
+        "x": 1260,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "72ad2c309d7b2fe9",
+        "type": "serial in",
+        "z": "1efa3ab44b591371",
+        "name": "loRaBeeResponse",
+        "serial": "cbb96a89980a268b",
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "65db11a9be37a9fa"
+            ]
+        ]
+    },
+    {
+        "id": "cc08f6c5b5eafbf0",
+        "type": "mysql",
+        "z": "1efa3ab44b591371",
+        "mydb": "2236dfd1.c909e",
+        "name": "",
+        "x": 620,
+        "y": 80,
+        "wires": [
+            [
+                "57e59c7e7353df81",
+                "38136a6682d39404"
+            ]
+        ]
+    },
+    {
+        "id": "efd5c7df6e247eb9",
+        "type": "mysql",
+        "z": "1efa3ab44b591371",
+        "mydb": "2236dfd1.c909e",
+        "name": "",
+        "x": 620,
+        "y": 240,
+        "wires": [
+            [
+                "40cf382d3a58d8af"
+            ]
+        ]
+    },
+    {
+        "id": "15584f68702efb5f",
+        "type": "mysql",
+        "z": "1efa3ab44b591371",
+        "mydb": "2236dfd1.c909e",
+        "name": "",
+        "x": 1120,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "290c1b8b89d139e4",
+        "type": "inject",
+        "z": "1efa3ab44b591371",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "AT+JOIN \\n",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 480,
+        "wires": [
+            [
+                "35515d518937dbe8"
+            ]
+        ]
+    },
+    {
+        "id": "35515d518937dbe8",
+        "type": "serial out",
+        "z": "1efa3ab44b591371",
+        "name": "SendAvgValues",
+        "serial": "cbb96a89980a268b",
+        "x": 760,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "57e59c7e7353df81",
+        "type": "function",
+        "z": "1efa3ab44b591371",
+        "name": "GET_AVERAGE",
+        "func": "// Recebe o payload que é um array de objetos\nlet data = msg.payload;\n\n// Verifica se o array está vazio\nif (data.length === 0) {\n    // Define uma mensagem ou comportamento apropriado para quando não há dados\n    msg.payload = \"No records to process.\";\n    return;\n}\n\n// Calcula a média dos valores na coluna \"VALUE\"\nlet sum = data.reduce((acc, obj) => acc + obj.VALUE, 0);\nlet average = sum / data.length;\n\n// Define a média calculada como payload para o próximo nó\nmsg.payload = average;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 80,
+        "wires": [
+            [
+                "3f176a75568a8e14"
+            ]
+        ]
+    },
+    {
+        "id": "3f176a75568a8e14",
+        "type": "function",
+        "z": "1efa3ab44b591371",
+        "name": "PREPARE_AT_SEND",
+        "func": "// Prepara o comando AT+SEND com o valor médio\nlet averageValue = msg.payload;\n\nif (averageValue.length === 0) {\n    // Define uma mensagem ou comportamento apropriado para quando não há dados\n    msg.payload = \"No records to process.\";\n    return;\n}\n\n\n// Adiciona o comando AT+SEND seguido de um newline character (\\n)\nmsg.payload = `AT+SEND 1:${averageValue}\\n`;\n\n// Retorna a mensagem para ser enviada pelo nó serial\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 80,
+        "wires": [
+            [
+                "4f57d1497276e747"
+            ]
+        ]
+    },
+    {
+        "id": "6a327fdc575bd63c",
+        "type": "function",
+        "z": "1efa3ab44b591371",
+        "name": "GET_PENDENCIES",
+        "func": "var query = \"SELECT * FROM INTEGRATION_QUEUE IQ \" +\n            \"WHERE IQ.STATUS = 'P' \" +\n            \"ORDER BY IQ.CREATION_DATE ASC \" +\n            \"LIMIT 3;\";\n            \nmsg.topic = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 360,
+        "wires": [
+            [
+                "efd5c7df6e247eb9"
+            ]
+        ]
+    },
+    {
+        "id": "40cf382d3a58d8af",
+        "type": "function",
+        "z": "1efa3ab44b591371",
+        "name": "UPDATE_PENDENCIES",
+        "func": "let ids = msg.payload.map(record => record.ID); // Extrai IDs do payload\n\nif (ids.length > 0) {\n    // Construa a consulta SQL somente se houver IDs\n    let updateQuery = `\n        UPDATE INTEGRATION_QUEUE \n        SET STATUS = 'I', INTEGRATION_DATE = NOW() \n        WHERE ID IN (${ids.join(\",\")});\n    `;\n    msg.topic = updateQuery;\n    return msg;\n}\n\n// Se não houver IDs, você pode definir msg.payload como uma mensagem para indicar isso\nmsg.payload = \"No records to update.\";\nmsg.topic = \"\";\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 240,
+        "wires": [
+            [
+                "15584f68702efb5f"
+            ]
+        ]
+    },
+    {
+        "id": "5c597b89feb440f4",
+        "type": "function",
+        "z": "1efa3ab44b591371",
+        "name": "GET_PENDENCIES",
+        "func": "var query = \"SELECT * FROM INTEGRATION_QUEUE IQ \" +\n            \"WHERE IQ.STATUS = 'P' \" +\n            \"ORDER BY IQ.CREATION_DATE ASC \" +\n            \"LIMIT 3;\";\n            \nmsg.topic = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 80,
+        "wires": [
+            [
+                "cc08f6c5b5eafbf0"
+            ]
+        ]
+    },
+    {
+        "id": "65db11a9be37a9fa",
+        "type": "function",
+        "z": "1efa3ab44b591371",
+        "name": "BUFFER_USB",
+        "func": "var buffer = context.get('buffer') || [];      // Obter o buffer armazenado no contexto\nvar rxConfigCount = context.get('rxConfigCount') || 0;  // Contar o número de RxConfig\n\n// Adiciona a mensagem recebida ao buffer\nbuffer.push(msg.payload);\n\n// Verifica se a mensagem atual contém o padrão que indica 'RxConfig'\nif (msg.payload.includes(\"RxConfig\")) {\n    rxConfigCount += 1;  // Incrementa a contagem de RxConfig\n    context.set('rxConfigCount', rxConfigCount);\n    \n    // Se este for o segundo 'RxConfig', processamos o buffer\n    if (rxConfigCount === 2) {\n        var completeMessage = buffer.join(\"\\n\"); // Junta todas as mensagens em uma só\n        \n        // Aqui você pode chamar a função desejada ou enviar a mensagem processada\n        msg.payload = completeMessage;\n        \n        // Limpa o buffer e reseta o contador após processar\n        context.set('buffer', []);\n        context.set('rxConfigCount', 0);\n        \n        return msg;  // Envia a mensagem final após detectar o segundo RxConfig\n    } else {\n        // Atualiza o buffer no contexto e aguarda o segundo RxConfig\n        context.set('buffer', buffer);\n        return null;  // Não enviar nada até o segundo RxConfig\n    }\n} else {\n    // Atualiza o buffer no contexto se não for uma mensagem RxConfig\n    context.set('buffer', buffer);\n    return null;  // Não enviar nada até encontrar o segundo RxConfig\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "6a327fdc575bd63c"
+            ]
+        ]
+    },
+    {
+        "id": "38136a6682d39404",
+        "type": "debug",
+        "z": "1efa3ab44b591371",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 180,
+        "wires": []
+    }
+]
