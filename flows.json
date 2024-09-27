@@ -43,7 +43,7 @@
         "id": "2236dfd1.c909e",
         "type": "MySQLdatabase",
         "name": "INTEGRATION",
-        "host": "192.168.1.240",
+        "host": "192.168.1.106",
         "port": "3306",
         "db": "INTEGRATION",
         "tz": "",
@@ -479,9 +479,7 @@
         "x": 90,
         "y": 80,
         "wires": [
-            [
-                "e5cfe75f9934af14"
-            ]
+            []
         ]
     },
     {
@@ -626,47 +624,13 @@
         "wires": []
     },
     {
-        "id": "4b4b9a6e8489852c",
-        "type": "cronplus",
-        "z": "1efa3ab44b591371",
-        "name": "SEND_DATA_RS232",
-        "outputField": "payload",
-        "timeZone": "",
-        "storeName": "",
-        "commandResponseMsgOutput": "output1",
-        "defaultLocation": "-27.173354029738917 -51.506803035736084",
-        "defaultLocationType": "fixed",
-        "outputs": 1,
-        "options": [
-            {
-                "name": "schedule1",
-                "topic": "topic1",
-                "payloadType": "default",
-                "payload": "",
-                "expressionType": "cron",
-                "expression": "*/3 * * * * *",
-                "location": "",
-                "offset": "0",
-                "solarType": "all",
-                "solarEvents": "sunrise,sunset"
-            }
-        ],
-        "x": 160,
-        "y": 80,
-        "wires": [
-            [
-                "5c597b89feb440f4"
-            ]
-        ]
-    },
-    {
         "id": "3676d32c388682c3",
         "type": "mysql",
         "z": "1efa3ab44b591371",
         "mydb": "2236dfd1.c909e",
         "name": "",
-        "x": 620,
-        "y": 80,
+        "x": 600,
+        "y": 100,
         "wires": [
             []
         ]
@@ -687,8 +651,8 @@
         "z": "1efa3ab44b591371",
         "name": "SendAvgValues",
         "serial": "cbb96a89980a268b",
-        "x": 1260,
-        "y": 80,
+        "x": 1240,
+        "y": 100,
         "wires": []
     },
     {
@@ -698,7 +662,7 @@
         "name": "loRaBeeResponse",
         "serial": "cbb96a89980a268b",
         "x": 150,
-        "y": 240,
+        "y": 180,
         "wires": [
             [
                 "65db11a9be37a9fa"
@@ -711,12 +675,12 @@
         "z": "1efa3ab44b591371",
         "mydb": "2236dfd1.c909e",
         "name": "",
-        "x": 620,
-        "y": 80,
+        "x": 600,
+        "y": 100,
         "wires": [
             [
                 "57e59c7e7353df81",
-                "38136a6682d39404"
+                "0d316b46031b7871"
             ]
         ]
     },
@@ -726,8 +690,8 @@
         "z": "1efa3ab44b591371",
         "mydb": "2236dfd1.c909e",
         "name": "",
-        "x": 620,
-        "y": 240,
+        "x": 800,
+        "y": 180,
         "wires": [
             [
                 "40cf382d3a58d8af"
@@ -740,10 +704,12 @@
         "z": "1efa3ab44b591371",
         "mydb": "2236dfd1.c909e",
         "name": "",
-        "x": 1120,
-        "y": 240,
+        "x": 1240,
+        "y": 180,
         "wires": [
-            []
+            [
+                "31b51a67a61dc16a"
+            ]
         ]
     },
     {
@@ -767,8 +733,8 @@
         "topic": "AT+JOIN \\n",
         "payload": "",
         "payloadType": "date",
-        "x": 360,
-        "y": 480,
+        "x": 220,
+        "y": 260,
         "wires": [
             [
                 "35515d518937dbe8"
@@ -781,8 +747,8 @@
         "z": "1efa3ab44b591371",
         "name": "SendAvgValues",
         "serial": "cbb96a89980a268b",
-        "x": 760,
-        "y": 480,
+        "x": 480,
+        "y": 260,
         "wires": []
     },
     {
@@ -797,8 +763,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 80,
+        "x": 800,
+        "y": 100,
         "wires": [
             [
                 "3f176a75568a8e14"
@@ -817,8 +783,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
-        "y": 80,
+        "x": 1020,
+        "y": 100,
         "wires": [
             [
                 "4f57d1497276e747"
@@ -837,8 +803,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 620,
-        "y": 360,
+        "x": 580,
+        "y": 180,
         "wires": [
             [
                 "efd5c7df6e247eb9"
@@ -857,8 +823,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 890,
-        "y": 240,
+        "x": 1030,
+        "y": 180,
         "wires": [
             [
                 "15584f68702efb5f"
@@ -870,15 +836,15 @@
         "type": "function",
         "z": "1efa3ab44b591371",
         "name": "GET_PENDENCIES",
-        "func": "var query = \"SELECT * FROM INTEGRATION_QUEUE IQ \" +\n            \"WHERE IQ.STATUS = 'P' \" +\n            \"ORDER BY IQ.CREATION_DATE ASC \" +\n            \"LIMIT 3;\";\n            \nmsg.topic = query;\nreturn msg;",
+        "func": "var query = \"SELECT * FROM INTEGRATION_QUEUE IQ \" +\n            \"WHERE IQ.STATUS = 'P' \" +\n            \"ORDER BY IQ.CREATION_DATE ASC \" +\n            \"LIMIT 5;\";\n            \nmsg.topic = query;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 80,
+        "x": 380,
+        "y": 100,
         "wires": [
             [
                 "cc08f6c5b5eafbf0"
@@ -898,7 +864,7 @@
         "finalize": "",
         "libs": [],
         "x": 360,
-        "y": 240,
+        "y": 180,
         "wires": [
             [
                 "6a327fdc575bd63c"
@@ -906,10 +872,10 @@
         ]
     },
     {
-        "id": "38136a6682d39404",
+        "id": "0d316b46031b7871",
         "type": "debug",
         "z": "1efa3ab44b591371",
-        "name": "debug 1",
+        "name": "debug 2",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -917,8 +883,42 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
-        "y": 180,
+        "x": 440,
+        "y": 40,
         "wires": []
+    },
+    {
+        "id": "31b51a67a61dc16a",
+        "type": "cronplus",
+        "z": "1efa3ab44b591371",
+        "name": "",
+        "outputField": "payload",
+        "timeZone": "",
+        "storeName": "",
+        "commandResponseMsgOutput": "output1",
+        "defaultLocation": "",
+        "defaultLocationType": "default",
+        "outputs": 1,
+        "options": [
+            {
+                "name": "schedule1",
+                "topic": "topic1",
+                "payloadType": "default",
+                "payload": "",
+                "expressionType": "cron",
+                "expression": "*/3 * * * * * * ",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            }
+        ],
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "5c597b89feb440f4"
+            ]
+        ]
     }
 ]
