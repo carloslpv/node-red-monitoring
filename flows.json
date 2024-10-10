@@ -32,18 +32,10 @@
         "env": []
     },
     {
-        "id": "858453483ebdf10a",
-        "type": "tab",
-        "label": "Fluxo 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "2236dfd1.c909e",
         "type": "MySQLdatabase",
         "name": "INTEGRATION",
-        "host": "192.168.1.106",
+        "host": "localhost",
         "port": "3306",
         "db": "INTEGRATION",
         "tz": "",
@@ -417,57 +409,6 @@
         ]
     },
     {
-        "id": "e5cfe75f9934af14",
-        "type": "function",
-        "z": "8d79c63af2905785",
-        "name": "INSERT_READ_VALUES",
-        "func": "var dataSensor = msg.payload;\n\nvar query = \"INSERT INTO INTEGRATION_QUEUE (DESCRIPTION,VALUE,STATUS,CREATION_DATE,INTEGRATION_DATE) VALUES (\" +\n            \"'Teste CODESYS', \" +\n            dataSensor + \", \" +\n            \"'P', \" +\n            \"NOW(), \" +\n            \"NULL);\";\n\nmsg.topic = query;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 80,
-        "wires": [
-            [
-                "a4b16b8afdb47881"
-            ]
-        ]
-    },
-    {
-        "id": "a4b16b8afdb47881",
-        "type": "mysql",
-        "z": "8d79c63af2905785",
-        "mydb": "2236dfd1.c909e",
-        "name": "",
-        "x": 580,
-        "y": 80,
-        "wires": [
-            [
-                "d8c772a15a5ec736"
-            ]
-        ]
-    },
-    {
-        "id": "d8c772a15a5ec736",
-        "type": "debug",
-        "z": "8d79c63af2905785",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 690,
-        "y": 300,
-        "wires": []
-    },
-    {
         "id": "1cc6d5dfbb127cec",
         "type": "s7 in",
         "z": "8d79c63af2905785",
@@ -491,6 +432,38 @@
         "x": 150,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "a4b16b8afdb47881",
+        "type": "mysql",
+        "z": "8d79c63af2905785",
+        "mydb": "2236dfd1.c909e",
+        "name": "",
+        "x": 580,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5cfe75f9934af14",
+        "type": "function",
+        "z": "8d79c63af2905785",
+        "name": "INSERT_READ_VALUES",
+        "func": "var dataSensor = msg.payload;\n\nvar query = \"INSERT INTO INTEGRATION_QUEUE (DESCRIPTION,VALUE,STATUS,CREATION_DATE,INTEGRATION_DATE) VALUES (\" +\n            \"'Teste CODESYS', \" +\n            dataSensor + \", \" +\n            \"'P', \" +\n            \"NOW(), \" +\n            \"NULL);\";\n\nmsg.topic = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 80,
+        "wires": [
+            [
+                "a4b16b8afdb47881"
+            ]
+        ]
     },
     {
         "id": "92ceddf2df36ff46",
@@ -662,10 +635,11 @@
         "name": "loRaBeeResponse",
         "serial": "cbb96a89980a268b",
         "x": 150,
-        "y": 180,
+        "y": 280,
         "wires": [
             [
-                "65db11a9be37a9fa"
+                "65db11a9be37a9fa",
+                "7632d1df41e12ec5"
             ]
         ]
     },
@@ -680,7 +654,7 @@
         "wires": [
             [
                 "57e59c7e7353df81",
-                "0d316b46031b7871"
+                "56bb6be51d1527a0"
             ]
         ]
     },
@@ -691,7 +665,7 @@
         "mydb": "2236dfd1.c909e",
         "name": "",
         "x": 800,
-        "y": 180,
+        "y": 280,
         "wires": [
             [
                 "40cf382d3a58d8af"
@@ -705,51 +679,12 @@
         "mydb": "2236dfd1.c909e",
         "name": "",
         "x": 1240,
-        "y": 180,
+        "y": 280,
         "wires": [
             [
-                "31b51a67a61dc16a"
+                "85f14887caee5f5f"
             ]
         ]
-    },
-    {
-        "id": "290c1b8b89d139e4",
-        "type": "inject",
-        "z": "1efa3ab44b591371",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "AT+JOIN \\n",
-        "payload": "",
-        "payloadType": "date",
-        "x": 220,
-        "y": 260,
-        "wires": [
-            [
-                "35515d518937dbe8"
-            ]
-        ]
-    },
-    {
-        "id": "35515d518937dbe8",
-        "type": "serial out",
-        "z": "1efa3ab44b591371",
-        "name": "SendAvgValues",
-        "serial": "cbb96a89980a268b",
-        "x": 480,
-        "y": 260,
-        "wires": []
     },
     {
         "id": "57e59c7e7353df81",
@@ -804,7 +739,7 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 180,
+        "y": 280,
         "wires": [
             [
                 "efd5c7df6e247eb9"
@@ -824,7 +759,7 @@
         "finalize": "",
         "libs": [],
         "x": 1030,
-        "y": 180,
+        "y": 280,
         "wires": [
             [
                 "15584f68702efb5f"
@@ -864,7 +799,7 @@
         "finalize": "",
         "libs": [],
         "x": 360,
-        "y": 180,
+        "y": 280,
         "wires": [
             [
                 "6a327fdc575bd63c"
@@ -872,7 +807,82 @@
         ]
     },
     {
-        "id": "0d316b46031b7871",
+        "id": "7632d1df41e12ec5",
+        "type": "debug",
+        "z": "1efa3ab44b591371",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "cc9a37aaa84dd689",
+        "type": "link in",
+        "z": "1efa3ab44b591371",
+        "name": "link in 1",
+        "links": [
+            "ba06c88e507c4356"
+        ],
+        "x": 155,
+        "y": 180,
+        "wires": [
+            [
+                "5c597b89feb440f4"
+            ]
+        ]
+    },
+    {
+        "id": "ba06c88e507c4356",
+        "type": "link out",
+        "z": "1efa3ab44b591371",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "cc9a37aaa84dd689"
+        ],
+        "x": 1195,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "bae48d810205408b",
+        "type": "inject",
+        "z": "1efa3ab44b591371",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "5c597b89feb440f4"
+            ]
+        ]
+    },
+    {
+        "id": "56bb6be51d1527a0",
         "type": "debug",
         "z": "1efa3ab44b591371",
         "name": "debug 2",
@@ -880,44 +890,36 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 440,
-        "y": 40,
+        "x": 680,
+        "y": 220,
         "wires": []
     },
     {
-        "id": "31b51a67a61dc16a",
-        "type": "cronplus",
+        "id": "85f14887caee5f5f",
+        "type": "delay",
         "z": "1efa3ab44b591371",
         "name": "",
-        "outputField": "payload",
-        "timeZone": "",
-        "storeName": "",
-        "commandResponseMsgOutput": "output1",
-        "defaultLocation": "",
-        "defaultLocationType": "default",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
         "outputs": 1,
-        "options": [
-            {
-                "name": "schedule1",
-                "topic": "topic1",
-                "payloadType": "default",
-                "payload": "",
-                "expressionType": "cron",
-                "expression": "*/3 * * * * * * ",
-                "location": "",
-                "offset": "0",
-                "solarType": "all",
-                "solarEvents": "sunrise,sunset"
-            }
-        ],
-        "x": 140,
-        "y": 100,
+        "x": 1020,
+        "y": 340,
         "wires": [
             [
-                "5c597b89feb440f4"
+                "ba06c88e507c4356"
             ]
         ]
     }
