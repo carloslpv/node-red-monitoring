@@ -873,7 +873,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
+        "x": 140,
         "y": 100,
         "wires": [
             [
